@@ -41,3 +41,4 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ imgUrl, title, description, g
 };
 
 export default ProjectCard;
+

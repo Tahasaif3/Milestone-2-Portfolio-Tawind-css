@@ -67,12 +67,12 @@ const AboutSection: React.FC = () => {
         <div className="mt-4 md:mt-0 text-left flex flex-col h-full">
           <h2 className="text-4xl font-bold text-white mb-4">About Me</h2>
           <p className="text-base lg:text-lg">
-          I am Taha Saif, a Frontend Developer specialized in HTML, CSS, JavaScript, 
-          Bootstrap, and TypeScript. Currently, I am expanding my skill set by learning 
+          I am Taha Saif a Frontend Developer specialized in HTML CSS JavaScript
+          Bootstrap, and TypeScript Currently I am expanding my skill set by learning 
           MERN stack development from SMIT Hyderabad and undertaking the AI Agentic Course 
-          through the Governor's Initiative for AI, Web 3.0, and the Metaverse in Karachi. 
-          I’m also completing a web designing course at Digital Sindh Institute of Technology 
-          in Hyderabad to further enhance my design and development expertise.
+          through the Governor Initiative for AI Web 3.0 and the Metaverse in Karachi
+          I am also completing a web designing course at Digital Sindh Institute of Technology 
+          in Hyderabad to further enhance my design and development expertise
           </p>
           <div className="flex flex-row justify-start mt-8">
             <TabButton
@@ -103,4 +103,3 @@ const AboutSection: React.FC = () => {
   );
 };
 
-export default AboutSection;

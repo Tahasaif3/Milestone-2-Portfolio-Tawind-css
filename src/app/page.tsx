@@ -22,4 +22,8 @@ const Home: React.FC = () => {
   );
 };
 
+<<<<<<< HEAD
 export default Home;
+=======
+export default Home;
+>>>>>>> b4eaff8 (Resole merged conflicts)
