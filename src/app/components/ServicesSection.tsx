@@ -1,10 +1,18 @@
-'use client';
+"use client"
 
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FaCode, FaMobile, FaDesktop, FaServer, FaPalette, FaRocket, FaBrain, FaAccessibleIcon } from 'react-icons/fa';
 
-const services = [
+// Define the Service type
+type Service = {
+  icon: React.ComponentType<any>; // React component type for icons
+  title: string;
+  description: string;
+};
+
+// Define the array of services with the appropriate type
+const services: Service[] = [
   { icon: FaCode, title: 'Web Development', description: 'Creating responsive and dynamic websites using modern technologies.' },
   { icon: FaMobile, title: 'Mobile App Development', description: 'Developing cross-platform mobile applications for iOS and Android.' },
   { icon: FaDesktop, title: 'Desktop Applications', description: 'Building efficient and user-friendly desktop software solutions.' },
@@ -18,7 +26,7 @@ const services = [
 
 export default function Services() {
   const [typedText, setTypedText] = useState('');
-  const [selectedService, setSelectedService] = useState(null);
+  const [selectedService, setSelectedService] = useState<number | null>(null);
   const fullText = "My Services";
 
   useEffect(() => {
@@ -78,7 +86,15 @@ export default function Services() {
   );
 }
 
-function ServiceCard({ service, index, isSelected, onClick }) {
+// Define the types for the props of the ServiceCard component
+type ServiceCardProps = {
+  service: Service;
+  index: number;
+  isSelected: boolean;
+  onClick: () => void;
+};
+
+function ServiceCard({ service, index, isSelected, onClick }: ServiceCardProps) {
   return (
     <motion.div 
       className={`bg-gray-800 rounded-lg p-6 shadow-lg transition duration-300 cursor-pointer ${isSelected ? 'ring-2 ring-blue-400' : 'hover:shadow-2xl'}`}
@@ -116,7 +132,13 @@ function ServiceCard({ service, index, isSelected, onClick }) {
   );
 }
 
-function ServiceModal({ service, onClose }) {
+// Define the type for the ServiceModal props
+type ServiceModalProps = {
+  service: Service;
+  onClose: () => void;
+};
+
+function ServiceModal({ service, onClose }: ServiceModalProps) {
   return (
     <motion.div
       className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50"
